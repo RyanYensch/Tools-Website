@@ -17,28 +17,41 @@ export default function ToolsHome() {
             </div>
 
             <div className="tools-grid">
-                {tools.map((tool) => (
-                    <Link
-                        key={tool.slug}
-                        to={`/${tool.slug}`}
-                        className="tool-card glass glow-item"
-                    >
-                        <div className="tool-card-header">
-                            <h2>{tool.name}</h2>
-                            <span className="tool-category">
-                                {tool.category}
-                            </span>
-                        </div>
+                {tools.map((tool) => {
+                    const isComingSoon = tool.status === "coming-soon";
 
-                        <p>{tool.description}</p>
+                    return (
+                        <Link
+                            key={tool.slug}
+                            to={`/${tool.slug}`}
+                            className={`tool-card glass glow-item ${isComingSoon ? "coming-soon" : ""}`}
+                        >
+                            <div className="tool-card-header">
+                                <h2>{tool.name}</h2>
 
-                        <div className="tool-tags">
-                            {tool.tags.map((tag) => (
-                                <span key={tag}>{tag}</span>
-                            ))}
-                        </div>
-                    </Link>
-                ))}
+                                <div className="tool-card-badges">
+                                    <span className="tool-category">
+                                        {tool.category}
+                                    </span>
+
+                                    {isComingSoon && (
+                                        <span className="tool-status">
+                                            Coming Soon
+                                        </span>
+                                    )}
+                                </div>
+                            </div>
+
+                            <p>{tool.description}</p>
+
+                            <div className="tool-tags">
+                                {tool.tags.map((tag) => (
+                                    <span key={tag}>{tag}</span>
+                                ))}
+                            </div>
+                        </Link>
+                    );
+                })}
             </div>
         </section>
     );
