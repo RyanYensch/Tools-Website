@@ -1,0 +1,61 @@
+.glass {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    box-shadow: var(--glass-shadow);
+    backdrop-filter: blur(var(--glass-blur));
+    -webkit-backdrop-filter: blur(var(--glass-blur));
+    border-radius: var(--r-lg);
+}
+
+.glass-hover {
+    transition: transform var(--t-medium) var(--ease),
+        border-color var(--t-medium) var(--ease),
+        box-shadow var(--t-medium) var(--ease);
+}
+
+.glass-hover:hover {
+    transform: translateY(-1px);
+    border-color: var(--glass-border-hover);
+}
+
+.glow-cyan {
+    box-shadow: var(--glass-shadow), var(--glow-cyan);
+}
+
+.glow-violet {
+    box-shadow: var(--glass-shadow), var(--glow-violet);
+}
+
+.glow-pink {
+    box-shadow: var(--glass-shadow), var(--glow-pink);
+}
+
+.glow-cyan-hover,
+.glow-violet-hover,
+.glow-pink-hover {
+    transition: box-shadow var(--t-medium) var(--ease);
+}
+
+.glow-cyan-hover:hover {
+    box-shadow: var(--glass-shadow), var(--glow-cyan);
+}
+
+.glow-pink-hover:hover {
+    box-shadow: var(--glass-shadow), var(--glow-pink);
+}
+
+.glow-violet-hover:hover {
+    box-shadow: var(--glass-shadow), var(--glow-violet);
+}
+
+.glow-item {
+    transition: box-shadow var(--t-medium) var(--ease),
+        background var(--t-medium) var(--ease),
+        color var(--t-medium) var(--ease);
+}
+
+.glow-item:hover {
+    background: rgba(255, 255, 255, 0.08);
+    box-shadow: var(--glow-cyan-item);
+    color: var(--text-0);
+}

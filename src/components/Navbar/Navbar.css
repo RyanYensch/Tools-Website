@@ -1,0 +1,188 @@
+/* NAVBAR ROOT */
+
+.navbar {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: var(--navbar-height);
+    z-index: 1000;
+
+    background: rgba(13, 27, 42, 0.4);
+    border-bottom: 1px solid var(--glass-border);
+    border-radius: var(--r-lg);
+}
+
+/* CONTAINER */
+
+.navbar-container {
+    height: 100%;
+    padding: 0 var(--pad-4);
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Name */
+
+.navbar-name-link {
+    text-decoration: none;
+    color: var(--text-0);
+
+    font-size: 1.8rem;
+    font-weight: 600;
+
+    padding: var(--pad-1) var(--pad-2);
+    border-radius: var(--r-md);
+
+    transition: background var(--t-fast) var(--ease),
+        color var(--t-fast) var(--ease);
+}
+
+/*  LINKS */
+
+.navbar-links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    display: flex;
+    gap: var(--pad-3);
+    margin-left: auto;
+}
+
+.navbar-item-link {
+    text-decoration: none;
+    color: var(--text-1);
+
+    font-size: 1.4rem;
+    font-weight: 800;
+
+    padding: var(--pad-1) var(--pad-2);
+    border-radius: var(--r-md);
+
+    transition: background var(--t-fast) var(--ease),
+        color var(--t-fast) var(--ease);
+}
+
+.navbar-item-link:hover {
+    color: var(--text-0);
+}
+
+/* HAMBURGER */
+
+.navbar-toggle {
+    display: none;
+
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    border-radius: var(--r-md);
+    padding: var(--pad-1);
+
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    transition: background var(--t-fast) var(--ease);
+}
+
+.navbar-toggle:focus {
+    outline: none;
+}
+
+.navbar-toggle:focus-visible {
+    box-shadow: 0 0 0 2px var(--accent-cyan);
+}
+
+.navbar-toggle-bar {
+    height: 3px;
+    width: 22px;
+    background: var(--text-0);
+    margin: 3px 0;
+    border-radius: 2px;
+
+    transition: transform var(--t-medium) var(--ease),
+        opacity var(--t-medium) var(--ease),
+        background var(--t-medium) var(--ease);
+}
+
+.navbar-toggle.open .navbar-toggle-bar:nth-child(1) {
+    transform: translateY(9px) rotate(45deg) scale(1.25);
+}
+
+.navbar-toggle.open .navbar-toggle-bar:nth-child(2) {
+    opacity: 0;
+}
+
+.navbar-toggle.open .navbar-toggle-bar:nth-child(3) {
+    transform: translateY(-9px) rotate(-45deg) scale(1.25);
+}
+
+/* DROPDOWN */
+
+.navbar-dropdown {
+    display: none;
+    background: rgba(13, 27, 42, 0.95);
+
+
+    position: absolute;
+    top: calc(var(--navbar-height) - 4px);
+    right: var(--pad-3);
+
+    min-width: 180px;
+    padding: var(--pad-2);
+
+    border-radius: var(--r-lg);
+}
+
+.navbar-dropdown.open {
+    display: block;
+}
+
+.navbar-dropdown-links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar-dropdown-item-link {
+    display: block;
+    padding: var(--pad-2);
+    border-radius: var(--r-md);
+
+    text-decoration: none;
+    color: var(--text-1);
+
+    transition: background var(--t-fast) var(--ease),
+        color var(--t-fast) var(--ease);
+}
+
+.navbar-dropdown-item-link:hover {
+    color: var(--text-0);
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 660px) {
+    .navbar-links {
+        display: none;
+    }
+
+    .navbar-toggle {
+        display: inline-flex;
+    }
+}
+
+@media (min-width: 661px) {
+    .navbar-toggle {
+        display: none;
+    }
+
+    .navbar-dropdown,
+    .navbar-dropdown.open {
+        display: none;
+    }
+}

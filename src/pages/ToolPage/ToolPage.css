@@ -1,0 +1,161 @@
+.tool-page {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.tool-back-link {
+    width: fit-content;
+    color: #bae6fd;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.tool-page-header {
+    padding: 2rem;
+    border-radius: 1.5rem;
+}
+
+.tool-page-category {
+    margin: 0 0 0.75rem;
+    color: #7dd3fc;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+}
+
+.tool-page-header h1 {
+    margin: 0;
+    color: white;
+    font-size: clamp(2.2rem, 5vw, 4rem);
+}
+
+.tool-page-header p {
+    max-width: 700px;
+    margin: 1rem 0 0;
+    color: rgba(255, 255, 255, 0.7);
+    line-height: 1.7;
+}
+
+.tool-page-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    margin-top: 1.25rem;
+}
+
+.tool-page-tags span {
+    border-radius: 999px;
+    padding: 0.4rem 0.75rem;
+    background: rgba(125, 211, 252, 0.1);
+    border: 1px solid rgba(125, 211, 252, 0.2);
+    color: #bae6fd;
+    font-size: 0.8rem;
+}
+
+.tool-workspace {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: stretch;
+    gap: 1.25rem;
+}
+
+.tool-panel {
+    min-height: 420px;
+    padding: 1.25rem;
+    border-radius: 1.25rem;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.tool-panel-header {
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.tool-panel-header h2 {
+    margin: 0;
+    color: white;
+    font-size: 1rem;
+}
+
+.tool-textarea {
+    width: 100%;
+    flex: 1;
+    min-height: 330px;
+    resize: vertical;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 1rem;
+    padding: 1rem;
+    background: rgba(2, 6, 23, 0.55);
+    color: white;
+    outline: none;
+    font-family: "Fira Code", "Consolas", monospace;
+    font-size: 0.9rem;
+    line-height: 1.6;
+    box-sizing: border-box;
+}
+
+.tool-textarea:focus {
+    border-color: rgba(125, 211, 252, 0.45);
+}
+
+.tool-output {
+    width: 100%;
+    flex: 1;
+    min-height: 330px;
+    margin: 0;
+    overflow: auto;
+    white-space: pre-wrap;
+    box-sizing: border-box;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 1rem;
+    padding: 1rem;
+    background: rgba(2, 6, 23, 0.55);
+    color: rgba(255, 255, 255, 0.78);
+    font-family: "Fira Code", "Consolas", monospace;
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+.tool-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+}
+
+.tool-button {
+    border: 1px solid rgba(125, 211, 252, 0.25);
+    border-radius: 999px;
+    padding: 0.7rem 1.1rem;
+    background: rgba(125, 211, 252, 0.1);
+    color: #e0f2fe;
+    font-weight: 700;
+    cursor: pointer;
+    transition:
+        transform 0.2s ease,
+        background-color 0.2s ease,
+        border-color 0.2s ease;
+}
+
+.tool-button:hover {
+    transform: translateY(-2px);
+    background: rgba(125, 211, 252, 0.18);
+    border-color: rgba(125, 211, 252, 0.45);
+}
+
+.tool-button.primary {
+    background: rgba(125, 211, 252, 0.22);
+}
+
+@media (max-width: 850px) {
+    .tool-workspace {
+        grid-template-columns: 1fr;
+    }
+}

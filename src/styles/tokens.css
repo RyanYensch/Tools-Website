@@ -1,0 +1,47 @@
+:root {
+    /* Background */
+    --space-0: #05060a;
+    --space-1: #0b1020;
+    --space-2: #0d1b2a;
+    --space-3: #1b263b;
+
+    /* Text */
+    --text-0: rgba(224, 225, 221, 0.92);
+    --text-1: rgba(224, 225, 221, 0.75);
+    --text-muted: rgba(224, 225, 221, 0.6);
+
+    /* Accent */
+    --accent-cyan: #5eead4;
+    --accent-violet: #a78bfa;
+    --accent-pink: #f472b6;
+
+    /* Glass */
+    --glass-bg: rgba(13, 27, 42, 0.45);
+    --glass-border: rgba(224, 225, 221, 0.18);
+    --glass-border-hover: rgba(224, 225, 221, 0.3);
+    --glass-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+    --glow-cyan: 0 0 30px rgba(94, 234, 212, 0.12);
+    --glow-violet: 0 0 30px rgba(167, 139, 250, 0.14);
+    --glow-pink: 0 0 30px rgba(244, 114, 182, 0.12);
+    --glow-cyan-item: 0 0 18px rgba(94, 234, 212, 0.22);
+    --glow-violet-item: 0 0 18px rgba(167, 139, 250, 0.22);
+    --glow-pink-item: 0 0 18px rgba(244, 114, 182, 0.18);
+    --glass-blur: 14px;
+
+    /* Radius + Spacing */
+    --r-lg: 20px;
+    --r-md: 12px;
+
+    --pad-1: 8px;
+    --pad-2: 12px;
+    --pad-3: 16px;
+    --pad-4: 24px;
+
+    /* Navbar */
+    --navbar-height: 64px;
+
+    /* Motion */
+    --ease: cubic-bezier(0.2, 0.8, 0.2, 1);
+    --t-fast: 160ms;
+    --t-medium: 220ms;
+}

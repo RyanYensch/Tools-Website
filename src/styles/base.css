@@ -1,0 +1,29 @@
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    color: var(--text-0);
+    background: radial-gradient(1200px 700px at 20% 10%, rgba(167, 139, 250, 0.12), transparent 60%),
+        radial-gradient(900px 600px at 80% 30%, rgba(94, 234, 212, 0.1), transparent 55%),
+        radial-gradient(700px 500px at 60% 90%, rgba(244, 114, 182, 0.08), transparent 60%),
+        linear-gradient(180deg, var(--space-0), var(--space-1), var(--space-2), var(--space-3));
+    min-height: 100vh;
+}
+
+.page {
+    display: flex;
+    padding-top: var(--navbar-height);
+    align-items: center;
+    justify-content: center;
+}
+
+a {
+    color: inherit;
+}
