@@ -29,7 +29,7 @@ export const tools: Tool[] = [
         description: "Encode and decode Base64 strings locally in your browser.",
         category: "Encoding",
         tags: ["Base64", "Encoding", "Decoding"],
-        status: "coming-soon",
+        status: "available",
     },
     {
         name: "JWT Decoder",
