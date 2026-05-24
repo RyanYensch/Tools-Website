@@ -87,7 +87,7 @@ export const tools: Tool[] = [
         description: "Write Markdown and preview the rendered output live.",
         category: "Text",
         tags: ["Markdown", "Preview", "HTML"],
-        status: "coming-soon",
+        status: "available",
     },
     {
         name: "CSP Tester",

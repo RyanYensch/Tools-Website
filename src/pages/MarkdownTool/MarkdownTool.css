@@ -1,0 +1,232 @@
+.markdown-controls-card {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  width: fit-content;
+  max-width: 100%;
+  padding: 0.6rem;
+  border-radius: 999px;
+}
+
+.markdown-textarea {
+  min-height: 520px;
+}
+
+.markdown-preview {
+  width: 100%;
+  max-width: 100%;
+  min-height: 520px;
+  box-sizing: border-box;
+  overflow: auto;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 1rem;
+  padding: 1.25rem;
+  background: rgba(2, 6, 23, 0.55);
+  color: rgba(255, 255, 255, 0.82);
+  line-height: 1.7;
+}
+
+.markdown-preview h1,
+.markdown-preview h2,
+.markdown-preview h3,
+.markdown-preview h4,
+.markdown-preview h5,
+.markdown-preview h6 {
+  color: white;
+  line-height: 1.2;
+  margin: 1.2rem 0 0.75rem;
+}
+
+.markdown-preview h1:first-child,
+.markdown-preview h2:first-child,
+.markdown-preview h3:first-child {
+  margin-top: 0;
+}
+
+.markdown-preview h1 {
+  font-size: 2rem;
+}
+
+.markdown-preview h2 {
+  font-size: 1.5rem;
+}
+
+.markdown-preview h3 {
+  font-size: 1.25rem;
+}
+
+.markdown-preview p {
+  margin: 0 0 1rem;
+}
+
+.markdown-preview ul,
+.markdown-preview ol {
+  margin: 0 0 1rem;
+  padding-left: 1.4rem;
+}
+
+.markdown-preview li {
+  margin: 0.35rem 0;
+}
+
+.markdown-preview a {
+  color: #7dd3fc;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.markdown-preview a:hover {
+  text-decoration: underline;
+}
+
+.markdown-preview blockquote {
+  margin: 1rem 0;
+  padding: 0.8rem 1rem;
+  border-left: 4px solid rgba(125, 211, 252, 0.65);
+  border-radius: 0 1rem 1rem 0;
+  background: rgba(125, 211, 252, 0.08);
+  color: rgba(255, 255, 255, 0.78);
+}
+
+.markdown-preview blockquote p:last-child {
+  margin-bottom: 0;
+}
+
+.markdown-preview hr {
+  border: none;
+  height: 1px;
+  margin: 1.25rem 0;
+  background: rgba(255, 255, 255, 0.14);
+}
+
+.markdown-inline-code {
+  border-radius: 0.35rem;
+  padding: 0.15rem 0.35rem;
+  background: rgba(125, 211, 252, 0.12);
+  color: #bae6fd;
+  font-family: "Fira Code", "Consolas", monospace;
+  font-size: 0.9em;
+}
+
+.markdown-code-block {
+  position: relative;
+  margin: 1rem 0;
+  overflow: auto;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 1rem;
+  padding: 1rem;
+  background: rgba(2, 6, 23, 0.78);
+  color: rgba(255, 255, 255, 0.85);
+  font-family: "Fira Code", "Consolas", monospace;
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+.markdown-code-block code {
+  display: block;
+  margin-top: 1.4rem;
+}
+
+.markdown-code-language {
+  position: absolute;
+  top: 0.65rem;
+  right: 0.8rem;
+  color: #bae6fd;
+  font-size: 0.75rem;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.markdown-blocked-link {
+  cursor: not-allowed;
+  border-radius: 0.35rem;
+  padding: 0.1rem 0.25rem;
+  background: rgba(248, 113, 113, 0.16);
+  color: #fecaca;
+  font-weight: 700;
+}
+
+.markdown-muted {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.58);
+}
+
+.markdown-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.85rem;
+}
+
+.markdown-stat-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  min-width: 0;
+  padding: 0.9rem 1rem;
+  border-radius: 1rem;
+}
+
+.markdown-stat-card span {
+  color: rgba(255, 255, 255, 0.66);
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.markdown-stat-card strong {
+  color: #bae6fd;
+  font-size: 1.1rem;
+}
+
+.markdown-note-card {
+  width: fit-content;
+  max-width: 820px;
+  padding: 1rem 1.2rem;
+  border-radius: 1.25rem;
+}
+
+.markdown-note-card strong {
+  display: block;
+  margin-bottom: 0.4rem;
+  color: #bae6fd;
+}
+
+.markdown-note-card p {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.6;
+}
+
+.markdown-note-card code {
+  color: #bae6fd;
+}
+
+@media (max-width: 900px) {
+  .markdown-stats-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 650px) {
+  .markdown-controls-card,
+  .markdown-note-card {
+    width: 100%;
+    box-sizing: border-box;
+    border-radius: 1.25rem;
+  }
+
+  .markdown-controls-card .tool-button {
+    flex: 1 1 auto;
+    justify-content: center;
+  }
+
+  .markdown-stats-grid {
+    grid-template-columns: 1fr;
+  }
+}
