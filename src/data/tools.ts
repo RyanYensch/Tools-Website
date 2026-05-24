@@ -90,14 +90,6 @@ export const tools: Tool[] = [
         status: "available",
     },
     {
-        name: "CSP Tester",
-        slug: "csp",
-        description: "Parse Content Security Policy headers and highlight risky directives.",
-        category: "Security",
-        tags: ["CSP", "Web Security", "Headers"],
-        status: "coming-soon",
-    },
-    {
         name: "Colour Converter",
         slug: "colour",
         description: "Convert colours between HEX, RGB, HSL, and other formats.",
@@ -105,4 +97,13 @@ export const tools: Tool[] = [
         tags: ["Colour", "HEX", "RGB", "HSL"],
         status: "available",
     },
+    {
+        name: "CSP Tester",
+        slug: "csp",
+        description: "Parse Content Security Policy headers and highlight risky directives.",
+        category: "Security",
+        tags: ["CSP", "Web Security", "Headers"],
+        status: "coming-soon",
+    },
+
 ];
