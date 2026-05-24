@@ -1,0 +1,157 @@
+.json-mode-card {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  width: fit-content;
+  max-width: 100%;
+  padding: 0.6rem;
+  border-radius: 999px;
+}
+
+.json-mode-button {
+  border: 1px solid transparent;
+  border-radius: 999px;
+  padding: 0.7rem 1.1rem;
+  background: transparent;
+  color: rgba(255, 255, 255, 0.72);
+  font-weight: 700;
+  cursor: pointer;
+  transition:
+    transform 0.2s ease,
+    background-color 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.json-mode-button:hover {
+  transform: translateY(-2px);
+  color: white;
+  background: rgba(125, 211, 252, 0.1);
+}
+
+.json-mode-button.active {
+  color: #e0f2fe;
+  background: rgba(125, 211, 252, 0.2);
+  border-color: rgba(125, 211, 252, 0.35);
+}
+
+.json-checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  width: fit-content;
+  color: rgba(255, 255, 255, 0.72);
+  font-weight: 700;
+}
+
+.json-checkbox-label input {
+  accent-color: #7dd3fc;
+}
+
+.json-textarea {
+  min-height: 430px;
+}
+
+.json-output {
+  min-height: 430px;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+.json-output.error {
+  color: #fecaca;
+  border-color: rgba(248, 113, 113, 0.35);
+}
+
+.json-token {
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+.json-token-key {
+  color: #7dd3fc;
+  font-weight: 700;
+}
+
+.json-token-string {
+  color: #86efac;
+}
+
+.json-token-number {
+  color: #fde68a;
+}
+
+.json-token-boolean {
+  color: #c4b5fd;
+  font-weight: 700;
+}
+
+.json-token-null {
+  color: #fca5a5;
+  font-weight: 700;
+}
+
+.json-token-punctuation {
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.json-token-whitespace {
+  color: inherit;
+}
+
+.json-token-unknown {
+  color: #fecaca;
+}
+
+.json-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.85rem;
+}
+
+.json-stat-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  min-width: 0;
+  padding: 0.9rem 1rem;
+  border-radius: 1rem;
+}
+
+.json-stat-card span {
+  color: rgba(255, 255, 255, 0.66);
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.json-stat-card strong {
+  color: #bae6fd;
+  font-size: 1.1rem;
+}
+
+@media (max-width: 900px) {
+  .json-stats-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 650px) {
+  .json-mode-card {
+    width: 100%;
+    box-sizing: border-box;
+    border-radius: 1.25rem;
+  }
+
+  .json-mode-button,
+  .json-mode-card .tool-button {
+    flex: 1 1 auto;
+    justify-content: center;
+  }
+
+  .json-stats-grid {
+    grid-template-columns: 1fr;
+  }
+}

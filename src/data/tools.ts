@@ -61,7 +61,7 @@ export const tools: Tool[] = [
         description: "Format, minify, and validate JSON instantly.",
         category: "Data",
         tags: ["JSON", "Formatter", "Validator"],
-        status: "coming-soon",
+        status: "available",
     },
     {
         name: "Timestamp Converter",
