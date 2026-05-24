@@ -13,6 +13,7 @@ import TimestampTool from './pages/TimestampTool/TimestampTool'
 import JsonTool from './pages/JsonTool/JsonTool'
 import UrlTool from './pages/UrlTool/UrlTool'
 import MarkdownTool from './pages/MarkdownTool/MarkdownTool'
+import ColourTool from './pages/ColourTool/ColourTool'
 
 function App() {
   return (
@@ -33,7 +34,7 @@ function App() {
           <Route path="/url" element={<UrlTool />} />
           <Route path="/markdown" element={<MarkdownTool />} />
           <Route path="/csp" element={<ToolPage toolSlug="csp" />} />
-          <Route path="/colour" element={<ToolPage toolSlug="colour" />} />
+          <Route path="/colour" element={<ColourTool />} />
 
           <Route path="*" element={<Navigate to="/" replace />} />
         </Route>

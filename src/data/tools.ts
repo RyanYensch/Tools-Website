@@ -103,6 +103,6 @@ export const tools: Tool[] = [
         description: "Convert colours between HEX, RGB, HSL, and other formats.",
         category: "Design",
         tags: ["Colour", "HEX", "RGB", "HSL"],
-        status: "coming-soon",
+        status: "available",
     },
 ];
