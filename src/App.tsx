@@ -3,7 +3,7 @@ import { Navigate, Route, Routes } from 'react-router-dom'
 import Layout from './components/Layout/Layout'
 import StarsBackground from './components/StarsBackground/StarsBackground'
 import ToolsHome from './pages/ToolsHome/ToolsHome'
-// import ToolPage from './pages/ToolPage/ToolPage'
+import ToolPage from './pages/ToolPage/ToolPage'
 import Base64Tool from './pages/Base64Tool/Base64Tool'
 import RegexTool from './pages/RegexTool/RegexTool'
 import TextCompareTool from './pages/TextCompareTool/TextCompareTool'
@@ -28,6 +28,10 @@ function App() {
           <Route path="/timestamp" element={<TimestampTool />} />
           <Route path="/text-compare" element={<TextCompareTool />} />
           <Route path="/sqli-tester" element={<SqliTesterTool />} />
+          <Route path="/url" element={<ToolPage toolSlug="url" />} />
+          <Route path="/markdown" element={<ToolPage toolSlug="markdown" />} />
+          <Route path="/csp" element={<ToolPage toolSlug="csp" />} />
+          <Route path="/colour" element={<ToolPage toolSlug="colour" />} />
 
           <Route path="*" element={<Navigate to="/" replace />} />
         </Route>
