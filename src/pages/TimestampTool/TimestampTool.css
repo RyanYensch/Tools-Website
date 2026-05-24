@@ -1,0 +1,180 @@
+.timestamp-mode-card {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  width: fit-content;
+  max-width: 100%;
+  padding: 0.6rem;
+  border-radius: 999px;
+}
+
+.timestamp-mode-button {
+  border: 1px solid transparent;
+  border-radius: 999px;
+  padding: 0.7rem 1.1rem;
+  background: transparent;
+  color: rgba(255, 255, 255, 0.72);
+  font-weight: 700;
+  cursor: pointer;
+  transition:
+    transform 0.2s ease,
+    background-color 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.timestamp-mode-button:hover {
+  transform: translateY(-2px);
+  color: white;
+  background: rgba(125, 211, 252, 0.1);
+}
+
+.timestamp-mode-button.active {
+  color: #e0f2fe;
+  background: rgba(125, 211, 252, 0.2);
+  border-color: rgba(125, 211, 252, 0.35);
+}
+
+.timestamp-input-card {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1.25rem;
+  border-radius: 1.25rem;
+  min-width: 0;
+}
+
+.timestamp-input-row {
+  display: flex;
+  align-items: end;
+  flex-wrap: wrap;
+  gap: 0.9rem;
+}
+
+.timestamp-control-label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  color: rgba(255, 255, 255, 0.75);
+  font-weight: 700;
+  font-size: 0.85rem;
+}
+
+.timestamp-main-input-label {
+  flex: 1;
+  min-width: min(420px, 100%);
+}
+
+.timestamp-select,
+.timestamp-input {
+  min-height: 2.9rem;
+  box-sizing: border-box;
+  border: 1px solid rgba(125, 211, 252, 0.25);
+  border-radius: 999px;
+  padding: 0.7rem 1rem;
+  background: rgba(2, 6, 23, 0.7);
+  color: white;
+  outline: none;
+  font-weight: 700;
+}
+
+.timestamp-select {
+  min-width: 180px;
+}
+
+.timestamp-input {
+  width: 100%;
+  font-family: "Fira Code", "Consolas", monospace;
+}
+
+.timestamp-select:focus,
+.timestamp-input:focus {
+  border-color: rgba(125, 211, 252, 0.45);
+}
+
+.timestamp-error {
+  width: fit-content;
+  max-width: 100%;
+  box-sizing: border-box;
+  border-radius: 1rem;
+  padding: 0.9rem 1rem;
+  background: rgba(248, 113, 113, 0.12);
+  border: 1px solid rgba(248, 113, 113, 0.25);
+  color: #fecaca;
+  font-weight: 700;
+}
+
+.timestamp-output-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.25rem;
+}
+
+.timestamp-output-item {
+  min-width: 0;
+  padding: 1.25rem;
+  border-radius: 1.25rem;
+}
+
+.timestamp-output-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.timestamp-output-header h2 {
+  margin: 0;
+  color: white;
+  font-size: 1rem;
+}
+
+.timestamp-output-value {
+  width: 100%;
+  max-width: 100%;
+  min-height: 4.5rem;
+  box-sizing: border-box;
+  margin: 0;
+  overflow: auto;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 1rem;
+  padding: 1rem;
+  background: rgba(2, 6, 23, 0.55);
+  color: rgba(255, 255, 255, 0.82);
+  font-family: "Fira Code", "Consolas", monospace;
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+@media (max-width: 850px) {
+  .timestamp-output-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .timestamp-mode-card,
+  .timestamp-input-card {
+    width: 100%;
+    box-sizing: border-box;
+    border-radius: 1.25rem;
+  }
+
+  .timestamp-main-input-label,
+  .timestamp-select,
+  .timestamp-input {
+    width: 100%;
+    min-width: 0;
+  }
+}
+
+@media (max-width: 620px) {
+  .timestamp-mode-button,
+  .timestamp-mode-card .tool-button {
+    flex: 1 1 auto;
+    justify-content: center;
+  }
+}

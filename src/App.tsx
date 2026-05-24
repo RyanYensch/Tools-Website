@@ -9,6 +9,7 @@ import RegexTool from './pages/RegexTool/RegexTool'
 import TextCompareTool from './pages/TextCompareTool/TextCompareTool'
 import SqliTesterTool from './pages/SqliTesterTool/SqliTesterTool'
 import JwtTool from './pages/JwtTool/JwtTool'
+import TimestampTool from './pages/TimestampTool/TimestampTool'
 
 function App() {
   return (
@@ -23,7 +24,7 @@ function App() {
           <Route path="/base64" element={<Base64Tool />} />
           <Route path="/jwt" element={<JwtTool />} />
           <Route path="/regex" element={<RegexTool />} />
-          <Route path="/timestamp" element={<ToolPage toolSlug="timestamp" />} />
+          <Route path="/timestamp" element={<TimestampTool />} />
           <Route path="/text-compare" element={<TextCompareTool />} />
           <Route path="/sqli-tester" element={<SqliTesterTool />} />
 

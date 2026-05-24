@@ -69,6 +69,6 @@ export const tools: Tool[] = [
         description: "Convert Unix timestamps into readable dates.",
         category: "Time",
         tags: ["Unix", "Timestamp", "Date"],
-        status: "coming-soon",
+        status: "available",
     },
 ];
