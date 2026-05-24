@@ -1,0 +1,110 @@
+.text-compare-controls {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  width: fit-content;
+  max-width: 100%;
+  padding: 0.6rem;
+  border-radius: 999px;
+}
+
+.text-compare-mode-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.text-compare-mode-button {
+  border: 1px solid transparent;
+  border-radius: 999px;
+  padding: 0.7rem 1.1rem;
+  background: transparent;
+  color: rgba(255, 255, 255, 0.72);
+  font-weight: 700;
+  cursor: pointer;
+  transition:
+    transform 0.2s ease,
+    background-color 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.text-compare-mode-button:hover {
+  transform: translateY(-2px);
+  color: white;
+  background: rgba(125, 211, 252, 0.1);
+}
+
+.text-compare-mode-button.active {
+  color: #e0f2fe;
+  background: rgba(125, 211, 252, 0.2);
+  border-color: rgba(125, 211, 252, 0.35);
+}
+
+.text-compare-summary {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  width: fit-content;
+  max-width: 100%;
+  padding: 0.8rem 1rem;
+  border-radius: 999px;
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.text-compare-summary strong {
+  color: #bae6fd;
+}
+
+.text-compare-output {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+.text-compare-token {
+  border-radius: 0.2rem;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+.text-compare-token.same {
+  color: rgba(255, 255, 255, 0.78);
+}
+
+.text-compare-token.removed {
+  background: rgba(248, 113, 113, 0.24);
+  color: #fecaca;
+  outline: 1px solid rgba(248, 113, 113, 0.28);
+}
+
+.text-compare-token.added {
+  background: rgba(34, 197, 94, 0.22);
+  color: #bbf7d0;
+  outline: 1px solid rgba(34, 197, 94, 0.28);
+}
+
+@media (max-width: 650px) {
+  .text-compare-controls {
+    width: 100%;
+    box-sizing: border-box;
+    border-radius: 1.25rem;
+  }
+
+  .text-compare-mode-buttons {
+    width: 100%;
+  }
+
+  .text-compare-mode-button,
+  .text-compare-controls .tool-button {
+    flex: 1 1 auto;
+    justify-content: center;
+  }
+
+  .text-compare-summary {
+    width: 100%;
+    box-sizing: border-box;
+    border-radius: 1.25rem;
+  }
+}

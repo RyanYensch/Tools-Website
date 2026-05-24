@@ -33,6 +33,11 @@ export default function Navbar() {
 
                 <ul className="navbar-links">
                     <li>
+                        <Link className="navbar-item-link glow-item" to="/text-compare">
+                            Text Compare
+                        </Link>
+                    </li>
+                    <li>
                         <Link className="navbar-item-link glow-item" to="/regex">
                             Regex
                         </Link>
@@ -43,9 +48,6 @@ export default function Navbar() {
                         </Link>
                     </li>
                     <li>
-                        <Link className="navbar-item-link glow-item" to="/jwt">
-                            JWT
-                        </Link>
                     </li>
                     <li>
                         <Link className="navbar-item-link glow-item" to="/base64">

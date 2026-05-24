@@ -6,6 +6,7 @@ import ToolsHome from './pages/ToolsHome/ToolsHome'
 import ToolPage from './pages/ToolPage/ToolPage'
 import Base64Tool from './pages/Base64Tool/Base64Tool'
 import RegexTool from './pages/RegexTool/RegexTool'
+import TextCompareTool from './pages/TextCompareTool/TextCompareTool'
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
           <Route path="/jwt" element={<ToolPage toolSlug="jwt" />} />
           <Route path="/regex" element={<RegexTool />} />
           <Route path="/timestamp" element={<ToolPage toolSlug="timestamp" />} />
+          <Route path="/text-compare" element={<TextCompareTool />} />
 
           <Route path="*" element={<Navigate to="/" replace />} />
         </Route>

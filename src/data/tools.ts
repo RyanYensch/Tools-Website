@@ -16,6 +16,14 @@ export type Tool = {
 
 export const tools: Tool[] = [
     {
+        name: "Text Compare",
+        slug: "text-compare",
+        description: "Compare two pieces of text and highlight the differences.",
+        category: "Text",
+        tags: ["Text", "Diff", "Compare"],
+        status: "available",
+    },
+    {
         name: "Regex Tester",
         slug: "regex",
         description: "Test regular expressions against sample text.",
