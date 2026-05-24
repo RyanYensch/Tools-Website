@@ -166,7 +166,7 @@
 
 /* RESPONSIVE */
 
-@media (max-width: 915px) {
+@media (max-width: 1100px) {
     .navbar-links {
         display: none;
     }
@@ -176,7 +176,7 @@
     }
 }
 
-@media (min-width: 916px) {
+@media (min-width: 1101px) {
     .navbar-toggle {
         display: none;
     }

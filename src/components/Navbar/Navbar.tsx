@@ -60,6 +60,16 @@ export default function Navbar() {
                         </Link>
                     </li>
                     <li>
+                        <Link className="navbar-item-link glow-item" to="/json">
+                            JSON
+                        </Link>
+                    </li>
+                    <li>
+                        <Link className="navbar-item-link glow-item" to="/timestamp">
+                            Time
+                        </Link>
+                    </li>
+                    <li>
                         <a
                             className="navbar-item-link glow-item"
                             href="https://ryan.yensch.com"
