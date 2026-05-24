@@ -11,6 +11,7 @@ import SqliTesterTool from './pages/SqliTesterTool/SqliTesterTool'
 import JwtTool from './pages/JwtTool/JwtTool'
 import TimestampTool from './pages/TimestampTool/TimestampTool'
 import JsonTool from './pages/JsonTool/JsonTool'
+import UrlTool from './pages/UrlTool/UrlTool'
 
 function App() {
   return (
@@ -28,7 +29,7 @@ function App() {
           <Route path="/timestamp" element={<TimestampTool />} />
           <Route path="/text-compare" element={<TextCompareTool />} />
           <Route path="/sqli-tester" element={<SqliTesterTool />} />
-          <Route path="/url" element={<ToolPage toolSlug="url" />} />
+          <Route path="/url" element={<UrlTool />} />
           <Route path="/markdown" element={<ToolPage toolSlug="markdown" />} />
           <Route path="/csp" element={<ToolPage toolSlug="csp" />} />
           <Route path="/colour" element={<ToolPage toolSlug="colour" />} />

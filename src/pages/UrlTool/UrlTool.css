@@ -1,0 +1,180 @@
+.url-mode-card {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  width: fit-content;
+  max-width: 100%;
+  padding: 0.6rem;
+  border-radius: 999px;
+}
+
+.url-mode-button {
+  border: 1px solid transparent;
+  border-radius: 999px;
+  padding: 0.7rem 1.1rem;
+  background: transparent;
+  color: rgba(255, 255, 255, 0.72);
+  font-weight: 700;
+  cursor: pointer;
+  transition:
+    transform 0.2s ease,
+    background-color 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.url-mode-button:hover {
+  transform: translateY(-2px);
+  color: white;
+  background: rgba(125, 211, 252, 0.1);
+}
+
+.url-mode-button.active {
+  color: #e0f2fe;
+  background: rgba(125, 211, 252, 0.2);
+  border-color: rgba(125, 211, 252, 0.35);
+}
+
+.url-textarea,
+.url-output {
+  min-height: 360px;
+}
+
+.url-output.error {
+  color: #fecaca;
+  border-color: rgba(248, 113, 113, 0.35);
+}
+
+.url-details-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 1.25rem;
+}
+
+.url-info-card {
+  min-width: 0;
+  padding: 1.25rem;
+  border-radius: 1.25rem;
+}
+
+.url-parts-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.url-parts-list div {
+  display: grid;
+  grid-template-columns: 120px minmax(0, 1fr);
+  gap: 0.75rem;
+  align-items: start;
+  min-width: 0;
+}
+
+.url-parts-list span {
+  color: rgba(255, 255, 255, 0.62);
+  font-weight: 700;
+}
+
+.url-parts-list code {
+  min-width: 0;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+  color: #bae6fd;
+  font-family: "Fira Code", "Consolas", monospace;
+}
+
+.url-query-table {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.url-query-row {
+  display: grid;
+  grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr) auto;
+  gap: 0.75rem;
+  align-items: center;
+  min-width: 0;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 1rem;
+  padding: 0.75rem;
+  background: rgba(2, 6, 23, 0.35);
+}
+
+.url-query-row.header {
+  border: none;
+  padding: 0 0.75rem;
+  background: transparent;
+  color: rgba(255, 255, 255, 0.58);
+  font-size: 0.85rem;
+  font-weight: 800;
+}
+
+.url-query-row code {
+  min-width: 0;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+  color: #bae6fd;
+  font-family: "Fira Code", "Consolas", monospace;
+}
+
+.url-muted {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.58);
+  line-height: 1.6;
+}
+
+.url-note-card {
+  width: fit-content;
+  max-width: 820px;
+  padding: 1rem 1.2rem;
+  border-radius: 1.25rem;
+}
+
+.url-note-card strong {
+  display: block;
+  margin-bottom: 0.4rem;
+  color: #bae6fd;
+}
+
+.url-note-card p {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.6;
+}
+
+.url-note-card code {
+  color: #bae6fd;
+}
+
+@media (max-width: 900px) {
+  .url-details-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 650px) {
+  .url-mode-card,
+  .url-note-card {
+    width: 100%;
+    box-sizing: border-box;
+    border-radius: 1.25rem;
+  }
+
+  .url-mode-button,
+  .url-mode-card .tool-button {
+    flex: 1 1 auto;
+    justify-content: center;
+  }
+
+  .url-parts-list div {
+    grid-template-columns: 1fr;
+  }
+
+  .url-query-row,
+  .url-query-row.header {
+    grid-template-columns: 1fr;
+  }
+}

@@ -79,7 +79,7 @@ export const tools: Tool[] = [
         description: "Encode, decode, and inspect URLs and query parameters.",
         category: "Web",
         tags: ["URL", "Encoding", "Query Params"],
-        status: "coming-soon",
+        status: "available",
     },
     {
         name: "Markdown Previewer",
