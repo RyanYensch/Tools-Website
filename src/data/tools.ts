@@ -16,12 +16,12 @@ export type Tool = {
 
 export const tools: Tool[] = [
     {
-        name: "JSON Formatter",
-        slug: "json",
-        description: "Format, minify, and validate JSON instantly.",
-        category: "Data",
-        tags: ["JSON", "Formatter", "Validator"],
-        status: "coming-soon",
+        name: "Regex Tester",
+        slug: "regex",
+        description: "Test regular expressions against sample text.",
+        category: "Text",
+        tags: ["Regex", "Pattern Matching"],
+        status: "available",
     },
     {
         name: "Base64 Encoder",
@@ -32,20 +32,20 @@ export const tools: Tool[] = [
         status: "available",
     },
     {
+        name: "JSON Formatter",
+        slug: "json",
+        description: "Format, minify, and validate JSON instantly.",
+        category: "Data",
+        tags: ["JSON", "Formatter", "Validator"],
+        status: "coming-soon",
+    },
+    {
         name: "JWT Decoder",
         slug: "jwt",
         description: "Decode JWT headers and payloads without uploading tokens.",
         category: "Security",
         tags: ["JWT", "Auth", "Security"],
         status: "coming-soon",
-    },
-    {
-        name: "Regex Tester",
-        slug: "regex",
-        description: "Test regular expressions against sample text.",
-        category: "Text",
-        tags: ["Regex", "Pattern Matching"],
-        status: "available",
     },
     {
         name: "Timestamp Converter",
