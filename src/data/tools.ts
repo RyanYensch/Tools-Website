@@ -40,6 +40,14 @@ export const tools: Tool[] = [
         status: "available",
     },
     {
+        name: "JWT Encoder / Decoder",
+        slug: "jwt",
+        description: "Decode and encode JWT headers and payloads.",
+        category: "Security",
+        tags: ["JWT", "Auth", "Security"],
+        status: "available",
+    },
+    {
         name: "SQL Injection Tester",
         slug: "sqli-tester",
         description: "Visualise how unsafe SQL queries change when user input is injected.",
@@ -53,14 +61,6 @@ export const tools: Tool[] = [
         description: "Format, minify, and validate JSON instantly.",
         category: "Data",
         tags: ["JSON", "Formatter", "Validator"],
-        status: "coming-soon",
-    },
-    {
-        name: "JWT Decoder",
-        slug: "jwt",
-        description: "Decode JWT headers and payloads without uploading tokens.",
-        category: "Security",
-        tags: ["JWT", "Auth", "Security"],
         status: "coming-soon",
     },
     {

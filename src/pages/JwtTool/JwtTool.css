@@ -1,0 +1,226 @@
+.jwt-mode-card {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  width: fit-content;
+  max-width: 100%;
+  padding: 0.6rem;
+  border-radius: 999px;
+}
+
+.jwt-mode-button {
+  border: 1px solid transparent;
+  border-radius: 999px;
+  padding: 0.7rem 1.1rem;
+  background: transparent;
+  color: rgba(255, 255, 255, 0.72);
+  font-weight: 700;
+  cursor: pointer;
+  transition:
+    transform 0.2s ease,
+    background-color 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.jwt-mode-button:hover {
+  transform: translateY(-2px);
+  color: white;
+  background: rgba(125, 211, 252, 0.1);
+}
+
+.jwt-mode-button.active {
+  color: #e0f2fe;
+  background: rgba(125, 211, 252, 0.2);
+  border-color: rgba(125, 211, 252, 0.35);
+}
+
+.jwt-wide-panel {
+  min-width: 0;
+}
+
+.jwt-token-input {
+  min-height: 180px;
+}
+
+.jwt-json-input {
+  min-height: 280px;
+}
+
+.jwt-decode-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 1.25rem;
+}
+
+.jwt-output {
+  min-height: 280px;
+}
+
+.jwt-signature-output {
+  min-height: 140px;
+}
+
+.jwt-token-output {
+  min-height: 180px;
+}
+
+.jwt-error-card {
+  width: fit-content;
+  max-width: 100%;
+  box-sizing: border-box;
+  padding: 1rem 1.2rem;
+  border-radius: 1.25rem;
+  color: #fecaca;
+  font-weight: 700;
+}
+
+.jwt-signing-card {
+  display: flex;
+  align-items: end;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  width: fit-content;
+  max-width: 100%;
+  padding: 0.75rem;
+  border-radius: 1.25rem;
+}
+
+.jwt-control-label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  color: rgba(255, 255, 255, 0.75);
+  font-weight: 700;
+  font-size: 0.85rem;
+}
+
+.jwt-secret-label {
+  min-width: min(360px, 100%);
+}
+
+.jwt-select,
+.jwt-secret-input {
+  min-height: 2.8rem;
+  box-sizing: border-box;
+  border: 1px solid rgba(125, 211, 252, 0.25);
+  border-radius: 999px;
+  padding: 0.7rem 1rem;
+  background: rgba(2, 6, 23, 0.7);
+  color: white;
+  outline: none;
+  font-weight: 700;
+}
+
+.jwt-select {
+  min-width: 150px;
+}
+
+.jwt-secret-input {
+  width: 100%;
+  min-width: 280px;
+  font-family: "Fira Code", "Consolas", monospace;
+}
+
+.jwt-secret-input:disabled {
+  cursor: not-allowed;
+  opacity: 0.55;
+}
+
+.jwt-select:focus,
+.jwt-secret-input:focus {
+  border-color: rgba(125, 211, 252, 0.45);
+}
+
+.jwt-checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  width: fit-content;
+  color: rgba(255, 255, 255, 0.72);
+  font-weight: 700;
+}
+
+.jwt-checkbox-label input {
+  accent-color: #7dd3fc;
+}
+
+.jwt-verification-card {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: fit-content;
+  max-width: 100%;
+  padding: 1.25rem;
+  border-radius: 1.25rem;
+  box-sizing: border-box;
+}
+
+.jwt-verification-result {
+  width: fit-content;
+  max-width: 900px;
+  box-sizing: border-box;
+  padding: 1rem 1.2rem;
+  border-radius: 1.25rem;
+  font-weight: 700;
+  line-height: 1.6;
+}
+
+.jwt-verification-result.valid {
+  color: #bbf7d0;
+}
+
+.jwt-verification-result.warning {
+  color: #fde68a;
+}
+
+.jwt-verification-result.error {
+  color: #fecaca;
+}
+
+.jwt-header-status {
+  flex-shrink: 0;
+  border-radius: 999px;
+  padding: 0.45rem 0.8rem;
+  font-size: 0.78rem;
+  font-weight: 800;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.jwt-header-status.valid {
+  background: rgba(34, 197, 94, 0.12);
+  border: 1px solid rgba(34, 197, 94, 0.25);
+  color: #bbf7d0;
+}
+
+.jwt-header-status.warning {
+  background: rgba(251, 191, 36, 0.12);
+  border: 1px solid rgba(251, 191, 36, 0.25);
+  color: #fde68a;
+}
+
+.jwt-header-status.error {
+  background: rgba(248, 113, 113, 0.12);
+  border: 1px solid rgba(248, 113, 113, 0.25);
+  color: #fecaca;
+}
+
+@media (max-width: 850px) {
+  .jwt-decode-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .jwt-signing-card,
+  .jwt-mode-card,
+  .jwt-verification-card {
+    width: 100%;
+    box-sizing: border-box;
+    border-radius: 1.25rem;
+  }
+
+  .jwt-secret-input {
+    width: 100%;
+    min-width: 0;
+  }
+}

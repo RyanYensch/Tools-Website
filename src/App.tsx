@@ -8,6 +8,7 @@ import Base64Tool from './pages/Base64Tool/Base64Tool'
 import RegexTool from './pages/RegexTool/RegexTool'
 import TextCompareTool from './pages/TextCompareTool/TextCompareTool'
 import SqliTesterTool from './pages/SqliTesterTool/SqliTesterTool'
+import JwtTool from './pages/JwtTool/JwtTool'
 
 function App() {
   return (
@@ -20,7 +21,7 @@ function App() {
 
           <Route path="/json" element={<ToolPage toolSlug="json" />} />
           <Route path="/base64" element={<Base64Tool />} />
-          <Route path="/jwt" element={<ToolPage toolSlug="jwt" />} />
+          <Route path="/jwt" element={<JwtTool />} />
           <Route path="/regex" element={<RegexTool />} />
           <Route path="/timestamp" element={<ToolPage toolSlug="timestamp" />} />
           <Route path="/text-compare" element={<TextCompareTool />} />

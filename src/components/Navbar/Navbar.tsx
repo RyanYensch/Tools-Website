@@ -55,6 +55,11 @@ export default function Navbar() {
                         </Link>
                     </li>
                     <li>
+                        <Link className="navbar-item-link glow-item" to="/jwt">
+                            JWT
+                        </Link>
+                    </li>
+                    <li>
                         <a
                             className="navbar-item-link glow-item"
                             href="https://ryan.yensch.com"
