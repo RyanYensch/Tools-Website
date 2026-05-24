@@ -2,7 +2,6 @@ import { useEffect, useMemo, useState } from "react";
 import { Link } from "react-router-dom";
 import {
     type JwtAlgorithm,
-    type JwtHeaderValidation,
     type JwtMode,
     type JwtVerificationResult,
     SUPPORTED_ALGORITHMS,
@@ -25,40 +24,6 @@ const DEFAULT_PAYLOAD = `{
   "admin": false,
   "iat": 1710000000
 }`;
-
-function HeaderValidationBadge({
-    validation,
-}: {
-    validation: JwtHeaderValidation;
-}) {
-    if (validation.errors.length > 0) {
-        return (
-            <span
-                className="jwt-header-status error"
-                title={validation.errors.join("\n")}
-            >
-                Header Invalid
-            </span>
-        );
-    }
-
-    if (validation.warnings.length > 0) {
-        return (
-            <span
-                className="jwt-header-status warning"
-                title={validation.warnings.join("\n")}
-            >
-                Header Warning
-            </span>
-        );
-    }
-
-    return (
-        <span className="jwt-header-status valid">
-            Header Looks Valid
-        </span>
-    );
-}
 
 function VerificationResultCard({
     result,
@@ -103,11 +68,6 @@ export default function JwtTool() {
 
     const [encodedJwt, setEncodedJwt] = useState("");
     const [encodeError, setEncodeError] = useState("");
-    const [encodeValidation, setEncodeValidation] =
-        useState<JwtHeaderValidation>({
-            errors: [],
-            warnings: [],
-        });
 
     const decodedResult = useMemo(() => {
         if (!tokenInput.trim()) {
@@ -118,10 +78,6 @@ export default function JwtTool() {
                 signingInput: "",
                 algorithm: null as JwtAlgorithm | null,
                 error: "",
-                headerValidation: {
-                    errors: [],
-                    warnings: [],
-                } as JwtHeaderValidation,
             };
         }
 
@@ -136,7 +92,6 @@ export default function JwtTool() {
                 signingInput: decoded.signingInput,
                 algorithm: decodedAlgorithm,
                 error: "",
-                headerValidation: decoded.headerValidation,
             };
         } catch (error) {
             return {
@@ -146,10 +101,6 @@ export default function JwtTool() {
                 signingInput: "",
                 algorithm: null as JwtAlgorithm | null,
                 error: error instanceof Error ? error.message : "Invalid JWT.",
-                headerValidation: {
-                    errors: [],
-                    warnings: [],
-                } as JwtHeaderValidation,
             };
         }
     }, [tokenInput]);
@@ -205,16 +156,11 @@ export default function JwtTool() {
 
                 if (!cancelled) {
                     setEncodedJwt(result.token);
-                    setEncodeValidation(result.headerValidation);
                     setEncodeError("");
                 }
             } catch (error) {
                 if (!cancelled) {
                     setEncodedJwt("");
-                    setEncodeValidation({
-                        errors: [],
-                        warnings: [],
-                    });
                     setEncodeError(
                         error instanceof Error
                             ? error.message
@@ -249,11 +195,20 @@ export default function JwtTool() {
         setTokenInput("");
         setVerifySecret("");
         setVerifySecretIsBase64(false);
+        setVerificationResult({
+            checked: false,
+            valid: false,
+            message: "",
+        });
+
         setHeaderJson(DEFAULT_HEADER);
         setPayloadJson(DEFAULT_PAYLOAD);
         setAlgorithm("HS256");
         setSigningSecret("secret");
         setSigningSecretIsBase64(false);
+
+        setEncodedJwt("");
+        setEncodeError("");
     };
 
     const handleUseEncodedAsInput = () => {
@@ -291,26 +246,12 @@ export default function JwtTool() {
             <div className="tool-page-header glass">
                 <div className="tool-page-title-row">
                     <p className="tool-page-category">Security</p>
-
-                    {mode === "decode" &&
-                        tokenInput.trim() &&
-                        !decodedResult.error && (
-                            <HeaderValidationBadge
-                                validation={decodedResult.headerValidation}
-                            />
-                        )}
-
-                    {mode === "encode" && !encodeError && (
-                        <HeaderValidationBadge
-                            validation={encodeValidation}
-                        />
-                    )}
                 </div>
 
                 <h1>JWT Encoder / Decoder</h1>
 
                 <p>
-                    Decode, validate, verify, encode, and sign JSON Web Tokens.
+                    Decode, verify, encode, and sign JSON Web Tokens.
                 </p>
 
                 <div className="tool-page-tags">
@@ -376,7 +317,6 @@ export default function JwtTool() {
                             {decodedResult.error}
                         </div>
                     )}
-
 
                     <div className="jwt-decode-grid">
                         <div className="tool-panel glass">
