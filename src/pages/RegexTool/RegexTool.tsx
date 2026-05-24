@@ -19,10 +19,10 @@ const FLAG_OPTIONS = [
         description: "^ and $ match each line",
     }, {
         value: "s",
-        label: "Dot ALl",
+        label: "Dot All",
         description: ". matches newlines",
     }, {
-        value: "U",
+        value: "u",
         label: "Unicode",
         description: "Unicode-aware matching",
     }
@@ -140,185 +140,185 @@ export default function RegexTool() {
             <div className="tool-page-header glass">
                 <div className="tool-page-title-row">
                     <p className="tool-page-category">Text</p>
-
-                    <span className="tool-page-status available">Available</span>
-
-                    <h1>Regex Tester</h1>
-
-                    <p>
-                        Test Regex expressions, highlight matches, and preview replacements.
-                    </p>
-
-                    <div className="tool-page-tags">
-                        <span>Regex</span>
-                        <span>Pattern Matching</span>
-                        <span>Text</span>
-                    </div>
                 </div>
 
-                <div className="regex-builder glass">
-                    <label className="regex-label">
-                        Pattern
-                        <div className="regex-pattern-row">
-                            <span className="rgex-slash">/</span>
+                <h1>Regex Tester</h1>
 
-                            <input
-                                className="regex-input"
-                                value={pattern}
-                                onChange={(event) => setPattern(event.target.value)}
-                                placeholder="example: \\b\w+@\\w\\.\\w+\\b" 
-                                spellCheck={false}
-                            />
+                <p>
+                    Test Regex expressions, highlight matches, and preview replacements.
+                </p>
 
-                            <span className="regex-slash">/{flags}</span>
-                        </div>
-                    </label>
+                <div className="tool-page-tags">
+                    <span>Regex</span>
+                    <span>Pattern Matching</span>
+                    <span>Text</span>
+                </div>
+            </div>
 
-                    <div className="regex-flags">
-                        {FLAG_OPTIONS.map((flag) => (
-                            <button
-                                key={flag.value}
-                                type="button"
-                                className={`regex-flag-button glow-item ${
-                                    selectedFlags.includes(flag.value) ? "active" : ""
-                                }`}
-                                onClick={() => toggleFlag(flag.value)}
-                                title={flag.description}>
-                                    <span>{flag.value}</span>
-                                    {flag.label}
-                                </button>
-                        ))}
+            <div className="regex-controls-card glass">
+                <label className="regex-label">
+                    Pattern
+
+                    <div className="regex-pattern-row">
+                        <span className="regex-slash">/</span>
+
+                        <input
+                            className="regex-input"
+                            value={pattern}
+                            onChange={(event) => setPattern(event.target.value)}
+                            placeholder="example: \\b\\w+@\\w+\\.\\w+\\b"
+                            spellCheck={false}
+                        />
+
+                        <span className="regex-slash">/{flags}</span>
+                    </div>
+                </label>
+
+                <div className="regex-flags">
+                    {FLAG_OPTIONS.map((flag) => (
+                        <button
+                            key={flag.value}
+                            type="button"
+                            className={`regex-flag-button glow-item ${
+                                selectedFlags.includes(flag.value) ? "active" : ""
+                            }`}
+                            onClick={() => toggleFlag(flag.value)}
+                            title={flag.description}
+                        >
+                            <span>{flag.value}</span>
+                            {flag.label}
+                        </button>
+                    ))}
+                </div>
+
+                {regexResult.error && (
+                    <p className="regex-error">
+                        {regexResult.error}
+                    </p>
+                )}
+            </div>
+
+            <div className="tool-workspace">
+                <div className="tool-panel glass">
+                    <div className="tool-panel-header">
+                        <h2>Test Text</h2>
                     </div>
 
-                    {regexResult.error && (
-                        <p className="regex-error">
-                            {regexResult.error}
+                    <textarea
+                        className="tool-textarea"
+                        value={testText}
+                        onChange={(event) => setTestText(event.target.value)}
+                        placeholder="Paste text to test your regex against..."
+                        spellCheck={false}
+                    />
+                </div>
+
+                <div className="tool-panel glass">
+                    <div className="tool-panel-header">
+                        <h2>
+                            Matches: {regexResult.matches.length}
+                        </h2>
+                    </div>
+
+                    <pre className={`tool-output regex-highlight-output ${
+                        regexResult.error ? "error" : ""
+                    }`}>
+                        {regexResult.error
+                            ? regexResult.error
+                            : highlightedParts.length > 0
+                                ? highlightedParts.map((part) => (
+                                    <span
+                                        key={part.key}
+                                        className={
+                                            part.highlighted ? "regex-highlight" : undefined
+                                        }
+                                    >
+                                        {part.text}
+                                    </span>
+                                ))
+                                : "Highlighted matches will appear here."}
+                    </pre>
+                </div>
+            </div>
+
+            <div className="regex-details-grid">
+                <div className="regex-info-panel glass">
+                    <div className="tool-panel-header">
+                        <h2>Match Details</h2>
+                    </div>
+
+                    {regexResult.matches.length === 0 ? (
+                        <p className="regex-muted">
+                            No matches yet.
                         </p>
+                    ) : (
+                        <div className="regex-match-list">
+                            {regexResult.matches.map((match, index) => (
+                                <div 
+                                    key={`${match.index}-${index}`}
+                                    className="regex-match-item"
+                                >
+                                    <div className="regex-match-top">
+                                        <strong>Match {index + 1}</strong>
+                                        <span>index {match.index}</span>
+                                    </div>
+
+                                    <code>{match.value || "(empty match)"}</code>
+
+                                    {match.groups.length > 0 && (
+                                        <div className="regex-groups">
+                                            {match.groups.map((group, groupIndex) => (
+                                                <span key={groupIndex}>
+                                                    Group {groupIndex + 1}:{" "}
+                                                    <code>{group}</code>
+                                                </span>
+                                            ))}
+                                        </div>
+                                    )}
+                                </div>
+                            ))}
+                        </div>
                     )}
                 </div>
 
-                <div className="tool-workspace">
-                    <div className="tool-panel glass">
-                        <div className="tool-panel-header">
-                            <h2>Test Text</h2>
-                        </div>
+                <div className="regex-info-panel glass">
+                    <div className="tool-panel-header">
+                        <h2>Replace Preview</h2>
 
-                        <textarea
-                            className="tool-textarea"
-                            value={testText}
-                            onChange={(event) => setTestText(event.target.value)}
-                            placeholder="Paste text to test your regex against..."
-                            spellCheck={false}
-                        />
-                    </div>
-
-                    <div className="tool-panel glass">
-                        <div className="tool-panel-header">
-                            <h2>
-                                Matches: {regexResult.matches.length}
-                            </h2>
-                        </div>
-
-                        <pre className={`tool-output regex-highlight-output ${
-                            regexResult.error ? "error" : ""
-                        }`}>
-                            {regexResult.error
-                                ? regexResult.error
-                                : highlightedParts.length > 0
-                                    ? highlightedParts.map((part) => (
-                                        <span
-                                            key={part.key}
-                                            className={
-                                                part.highlighted ? "regex-highlight" : undefined
-                                            }
-                                        >
-                                            {part.text}
-                                        </span>
-                                    ))
-                                    : "Highlighted matches will appear here."}
-                        </pre>
-                    </div>
-                </div>
-
-                <div className="regex-details-grid">
-                    <div className="regex-info-panel glass">
-                        <div className="tool-panel-header">
-                            <h2>Match Details</h2>
-                        </div>
-
-                        {regexResult.matches.length === 0 ? (
-                            <p className="regex-muted">
-                                No matches yet.
-                            </p>
-                        ) : (
-                            <div className="regex-match-list">
-                                {regexResult.matches.map((match, index) => (
-                                    <div 
-                                        key={`${match.index}-${index}`}
-                                        className="regex-match-item"
-                                    >
-                                        <div className="regex-match-top">
-                                            <strong>Match {index + 1}</strong>
-                                            <span>index {match.index}</span>
-                                        </div>
-
-                                        <code>{match.value || "(empty match)"}</code>
-
-                                        {match.groups.length > 0 && (
-                                            <div className="regex-groups">
-                                                {match.groups.map((group, groupIndex) => (
-                                                    <span key={groupIndex}>
-                                                        Group {groupIndex + 1}:{" "}
-                                                        <code>{group}</code>
-                                                    </span>
-                                                ))}
-                                            </div>
-                                        )}
-                                    </div>
-                                ))}
-                            </div>
-                        )}
-                    </div>
-
-                    <div className="regex-info-panel glass">
-                        <div className="tool-panel-header">
-                            <h2>Replace Preview</h2>
-
-                            <button
+                        <button
                             className="tool-button glow-item"
                             type="button"
                             onClick={handleCopyReplacement}
                             disabled={!regexResult.replacedText || Boolean(regexResult.error)}
-                            >
-                                Copy
-                            </button>
-                        </div>
-
-                        <input
-                            className="regex-input replace"
-                            value={replacement}
-                            onChange={(event) => setReplacement(event.target.value)}
-                            placeholder="Replacement text..."
-                            spellCheck={false}
-                        />
-
-                        <pre className="tool-output regex-replace-output">
-                            {regexResult.error
-                                ? "Fix the regex to preview replacements."
-                                : regexResult.replacedText || "Replacement output will appear here."}
-                        </pre>
+                        >
+                            Copy
+                        </button>
                     </div>
-                </div>
 
-                <div className="tool-actions">
-                    <button
-                        className="tool-button glow-item"
-                        type="button"
-                        onClick={handleClear}
-                    >
-                        Clear
-                    </button>
+                    <input
+                        className="regex-input replace"
+                        value={replacement}
+                        onChange={(event) => setReplacement(event.target.value)}
+                        placeholder="Replacement text..."
+                        spellCheck={false}
+                    />
+
+                    <pre className="tool-output regex-replace-output">
+                        {regexResult.error
+                            ? "Fix the regex to preview replacements."
+                            : regexResult.replacedText || "Replacement output will appear here."}
+                    </pre>
                 </div>
+            </div>
+
+            <div className="tool-actions">
+                <button
+                    className="tool-button glow-item"
+                    type="button"
+                    onClick={handleClear}
+                >
+                    Clear
+                </button>
             </div>
         </section>
     );

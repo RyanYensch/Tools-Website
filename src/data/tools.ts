@@ -45,7 +45,7 @@ export const tools: Tool[] = [
         description: "Test regular expressions against sample text.",
         category: "Text",
         tags: ["Regex", "Pattern Matching"],
-        status: "coming-soon",
+        status: "available",
     },
     {
         name: "Timestamp Converter",

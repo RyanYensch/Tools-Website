@@ -33,8 +33,8 @@ export default function Navbar() {
 
                 <ul className="navbar-links">
                     <li>
-                        <Link className="navbar-item-link glow-item" to="/">
-                            Tools
+                        <Link className="navbar-item-link glow-item" to="/regex">
+                            Regex
                         </Link>
                     </li>
                     <li>
