@@ -7,6 +7,7 @@ import ToolPage from './pages/ToolPage/ToolPage'
 import Base64Tool from './pages/Base64Tool/Base64Tool'
 import RegexTool from './pages/RegexTool/RegexTool'
 import TextCompareTool from './pages/TextCompareTool/TextCompareTool'
+import SqliTesterTool from './pages/SqliTesterTool/SqliTesterTool'
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
           <Route path="/regex" element={<RegexTool />} />
           <Route path="/timestamp" element={<ToolPage toolSlug="timestamp" />} />
           <Route path="/text-compare" element={<TextCompareTool />} />
+          <Route path="/sqli-tester" element={<SqliTesterTool />} />
 
           <Route path="*" element={<Navigate to="/" replace />} />
         </Route>

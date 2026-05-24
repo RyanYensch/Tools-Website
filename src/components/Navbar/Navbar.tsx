@@ -43,15 +43,15 @@ export default function Navbar() {
                         </Link>
                     </li>
                     <li>
-                        <Link className="navbar-item-link glow-item" to="/json">
-                            JSON
-                        </Link>
-                    </li>
-                    <li>
                     </li>
                     <li>
                         <Link className="navbar-item-link glow-item" to="/base64">
                             Base64
+                        </Link>
+                    </li>
+                    <li>
+                        <Link className="navbar-item-link glow-item" to="/sqli-tester">
+                            SQLi
                         </Link>
                     </li>
                     <li>

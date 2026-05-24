@@ -40,6 +40,14 @@ export const tools: Tool[] = [
         status: "available",
     },
     {
+        name: "SQL Injection Tester",
+        slug: "sqli-tester",
+        description: "Visualise how unsafe SQL queries change when user input is injected.",
+        category: "Security",
+        tags: ["SQLi", "MySQL", "Cybersecurity"],
+        status: "available",
+    },
+    {
         name: "JSON Formatter",
         slug: "json",
         description: "Format, minify, and validate JSON instantly.",
